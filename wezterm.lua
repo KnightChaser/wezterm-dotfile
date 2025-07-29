@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- merge in modules
-local modules = { "color", "font" }
+local modules = { "color", "font", "keymaps" }
 for _, name in ipairs(modules) do
 	local ok, opts = pcall(require, "configuration." .. name)
 	if ok and type(opts) == "table" then
