@@ -32,9 +32,16 @@ return {
 		{ key = "-", mods = "ALT", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
 
 		-- Navigate between panes with [Alt]+[H/J/K/L] (like tmux/Vim)
-		{ key = "H", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
-		{ key = "J", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
-		{ key = "K", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
-		{ key = "L", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+		{ key = "h", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+		{ key = "j", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+		{ key = "k", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+		{ key = "l", mods = "ALT", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+
+		-- Vertically shrink/expand
+		{ key = "K", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Up", 1 } }) },
+		{ key = "J", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Down", 1 } }) },
+		-- Horizontally shrink/expand
+		{ key = "H", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Left", 1 } }) },
+		{ key = "L", mods = "ALT|SHIFT", action = wezterm.action({ AdjustPaneSize = { "Right", 1 } }) },
 	},
 }
